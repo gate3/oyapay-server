@@ -1,0 +1,1 @@
+# Pull, run npm install in the project directory and run npm start
