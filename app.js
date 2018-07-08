@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,8 +14,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/oyapay');
-
+mongoose.connect(process.env.MONGODB_URI);
 var app = express();
 
 app.use(logger('dev'));
